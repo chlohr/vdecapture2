@@ -10,7 +10,7 @@ vdecapture2 -- Capture vde traffic in pcap format
 
 # DESCRIPTION
 
-`vdecapture` captures packet data from a live VDE network and saves it
+`vdecapture2` captures packet data from a live VDE network and saves it
 to an output file in pcap format.
 
 This is a reimplementation of the original vdecapture(1) (VirtualSquare). 

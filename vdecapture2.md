@@ -14,8 +14,8 @@ vdecapture2 -- Capture vde traffic in pcap format
 to an output file in pcap format.
 
 This is a reimplementation of the original vdecapture(1) (VirtualSquare). 
-Less options or none, but more resilient on writing on fifo(7) that are
-closed and reopen by readers.
+Fewer or no options, but more resistant to writing on fifo(7) which are
+closed and reopened by readers.
 
 
 # OPTIONS
@@ -28,6 +28,22 @@ closed and reopen by readers.
 
   *VNL*
 : Virtual Network Locator (e.g. vde:///tmp/vde.ctl)
+
+
+# EXAMPLE
+
+One create a fifo file.  vdecapture2 writes to it, and is connected to the
+default vde plug.  tshark reads the fifo, is stopped and restarted.
+
+```
+$ mknod fifo.pcap
+$ vdecapture2 -o fifo.pcap &
+$ tshark -i fifo.pcap
+  ^C
+$ tshark -i fifo.pcap
+  ^C
+$ kill %%
+```
 
 
 # SEE ALSO

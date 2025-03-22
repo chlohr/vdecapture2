@@ -34,7 +34,7 @@ $ sudo make install
 : Virtual Network Locator (e.g. vde:///tmp/vde.ctl)
 
 
-## Example
+## Example
 
 One create a fifo file.  vdecapture2 writes to it, and is connected to the
 default vde plug.  tshark reads the fifo, is stopped and restarted.
